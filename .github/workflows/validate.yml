@@ -1,0 +1,12 @@
+name: Validacao IaC Apache
+on:
+  push:
+  pull_request:
+jobs:
+  testes-estaticos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Executar testes de sintaxe e simulacao
+        run: bash tests/teste_estatico.sh
